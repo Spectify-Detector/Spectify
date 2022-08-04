@@ -25,21 +25,21 @@ Step 2: Running gem5 and generating execution report
 --------------------------------------------------------------------------------------------
 *Commands:*
 
-  $ git clone https://github.com/Arash-Rashid/gem5-spectify.git
-  $ cd gem5-spectify
-  $ git checkout dump\_report
-  $ scons build/X86/gem5.opt -j8 
-  $ build/X86/gem5.opt --debug-file=report.txt /
-  --debug-flags=Tage,Cache,Squash,CacheVerbose  configs/example/se.py /
-  --cpu-type=DerivO3CPU  --caches --l2cache  --mem-size=512MB / 
-  --mem-type=SimpleMemory --cacheline\_size=64 --bp-type=TAGE  --cmd [binary]
+    $ git clone https://github.com/Arash-Rashid/gem5-spectify.git
+    $ cd gem5-spectify
+    $ git checkout dump\_report
+    $ scons build/X86/gem5.opt -j8 
+    $ build/X86/gem5.opt --debug-file=report.txt /
+    --debug-flags=Tage,Cache,Squash,CacheVerbose  configs/example/se.py /
+    --cpu-type=DerivO3CPU  --caches --l2cache  --mem-size=512MB / 
+    --mem-type=SimpleMemory --cacheline\_size=64 --bp-type=TAGE  --cmd [binary]
 
 Step 3: Running the detector
 --------------------------------------------------------------------------------------------
 **For Spectre using prime+probe:**
 
-  $ ./detector\_pp [gem5 report] [#required primed cache sets] [#cache ways] /
-  [frame size] [CS clear percentage] [gem5 cpu name] [initial tick] [report interval] 
+    $ ./detector\_pp [gem5 report] [#required primed cache sets] [#cache ways] /
+    [frame size] [CS clear percentage] [gem5 cpu name] [initial tick] [report interval] 
 
 * \[gem5 report\]: The debug output gem5 generated in step 2
 * \[#required primed cache sets\]: Required number of cache sets to be primed for a     successful attack 
@@ -51,18 +51,18 @@ Step 3: Running the detector
 * \[report interval\]: Dump statistics periodically for a specific number of frames
 
 *Example:*
-  $ ./detector\_pp ../examples/report.txt 2 2 1000000 0 cpu 0 50
+    $ ./detector\_pp ../examples/report.txt 2 2 1000000 0 cpu 0 50
 
 
 **For Spectre using flush+flush or flush+reload:**
 
-  $ ./detector\_pp [gem5 report] [#required flushed cache lines] [frame size] 
+    $ ./detector\_pp [gem5 report] [#required flushed cache lines] [frame size] 
  
 * \[gem5 report\]: The debug output gem5 generated in step 2
 * \[#required flushed cache lines\]: Required number of cache lines to be flushed for a     successful attack 
 * \[frame size\]: Frame size specifies the number of simulation ticks between two context switches
 
 *Example:*
-  $ ./detector\_flush ../examples/report-flush.txt 256 1000000
+    $ ./detector\_flush ../examples/report-flush.txt 256 1000000
 
 

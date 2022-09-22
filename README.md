@@ -25,7 +25,7 @@ Step 2: Running gem5 and generating execution report
 --------------------------------------------------------------------------------------------
 *Commands:*
 
-    $ git clone https://github.com/Arash-Rashid/gem5-spectify.git
+    $ git clone https://github.com/Spectify-Detector/gem5-Spectify-Detector.git
     $ cd gem5-spectify
     $ git checkout dump\_report
     $ scons build/X86/gem5.opt -j8 

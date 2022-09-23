@@ -1,5 +1,7 @@
+This repo is the implementation of the Spectify detection mechanism presented in our Spectify paper [1]. Spectify is a fast, robust, accurate, and efficient method to detect speculation based attacks. Please refer to the paper for more details.
+
 # Citation
-A. Pashrashid, A. Hajiabadi, T. E. Carlson, "Fast, Robust and Accurate Detection of Cache-based Spectre
+[1] A. Pashrashid, A. Hajiabadi, T. E. Carlson, "Fast, Robust and Accurate Detection of Cache-based Spectre
 Attack Phases", 41st IEEE/ACM International Conference on Computer-Aided Design (ICCAD '22)
 
 # How to Run Spectify
